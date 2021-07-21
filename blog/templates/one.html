@@ -1,0 +1,18 @@
+{% extends 'projects/basetemplate.html'%}
+
+{%block content%}
+
+<h2>There are {{returned.count}} blog{{returned.count | pluralize}}</h2>
+
+{%for i in returned%}
+
+<a href = "{% url 'blog:newblog' i.id%}"><h1>{{i.name}}</h1></a>
+<br>
+<h5>{{i.date | date:'M d Y' | upper }}</h5>
+<br>
+<p>{{i.desc | truncatechars:100}}</p>
+
+
+{%endfor%}
+
+{%endblock%}

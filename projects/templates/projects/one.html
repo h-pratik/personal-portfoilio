@@ -1,0 +1,26 @@
+{% extends 'projects/basetemplate.html' %}
+{% load static %}
+
+{% block content %}
+<div class = 'container text-center'>
+<img src ="{% static 'projects/DSC_0832.jpg' %}" width = "500"   height="500">
+<br>
+</div>
+
+
+<h2 class="mt-5 text-center">Portfolio</h2>
+<hr>
+<div class="row">
+    {%for i in projects%}
+    <div class="col-lg-4 col-md-6">
+        {% if i.url%}
+        <a href = {{i.url}}>
+        {%endif%}   
+        <img src = "{{i.image.url}} " class="img-fluid mb-2"></a>
+        <h2 class= "text-center">{{i.title}}</h2>
+        <p class= "text-center">{{i.desc}}</p>
+    </div>
+    {% endfor %}
+</div>  
+
+{%endblock%}

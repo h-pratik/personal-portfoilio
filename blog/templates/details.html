@@ -1,0 +1,7 @@
+{% extends 'projects/basetemplate.html' %}
+{% block content %}
+<h1>{{blog_id.name}}</h1>
+<h2>--{{blog_id.date | date:'F jS Y' | upper}}--</h2>
+<p>{{blog_id.desc}}</p>
+
+{%endblock%}
